@@ -1,0 +1,7 @@
+<% if line_item_date.errors.any? %>
+  <div class="error-message">
+    <%= form_error_notification(line_item_date) %>
+    
+    <%= line_item_date.errors.full_messages.to_sentence.capitalize %>
+  </div>
+<% end %>
