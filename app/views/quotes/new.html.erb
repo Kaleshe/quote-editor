@@ -1,4 +1,3 @@
-<%= turbo_frame_tag @quote do %>
   <main class="container">
     <%= link_to sanitize("&larr; Back to quote"), quotes_path %>
 
@@ -6,8 +5,9 @@
       <h1>New date</h1>
     </div>
 
+  <%= turbo_frame_tag @quote do %>
     <%= turbo_frame_tag @line_item_date do %>
       <%= render "form", quote: @quote, line_item_date: @line_item_date %>
     <% end %>
+  <% end %>
   </main>
-<% end %>
