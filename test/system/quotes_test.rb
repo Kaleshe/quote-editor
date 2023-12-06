@@ -34,7 +34,7 @@ class QuotesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
     fill_in "Name", with: "Updated quote"
 
-    assert_selector "h1", text: "Quotes"
+    assert_selector "h1", text: "Quotes"agq YG
     click_on "Update quote"
 
     assert_selector "h1", text: "Quotes"

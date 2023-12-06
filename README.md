@@ -3,22 +3,15 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+The setups steps expect following tools installed on the system.
 
-* Ruby version
+* Ruby 3.1.3p185
+* Rails 7.0.8
 
-* System dependencies
+## Install dependencies
 
-* Configuration
+``` bundle && yarn ```
 
-* Database creation
+## Development
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+``` bin/dev ```
