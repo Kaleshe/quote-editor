@@ -6,8 +6,9 @@
     <div class="navbar__name">
       <%= current_user.name %>
     </div>
-    <%= render(ButtonComponent.new(text: "Sign out", path: destroy_user_session_path)) %>
+    <%= render(ButtonComponent.new(text: "Sign out", method: :delete, path: destroy_user_session_path)) %>
   <% else %>
-    <%= render(ButtonComponent.new(text: "Sign in", path: new_user_session_path, className: "navbar__right")) %>
+
+    <%= render(ButtonComponent.new(text: "Sign in", path: new_user_session_path, classes: "navbar__right")) %>
   <% end %>
 </header>

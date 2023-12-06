@@ -1,29 +1,29 @@
 # frozen_string_literal: true
 
 class ButtonComponent < ViewComponent::Base
-  attr_reader :text, :path, :className, :theme
+  attr_reader :text, :path, :extra_classes, :theme, :link, :method
 
   THEMES = {
-    dark: "btn-dark",
-    light: "btn-light"
+    dark: "btn--dark",
+    light: "btn--light"
   }.freeze
 
-  def initialize(text, path, className: "", theme: "dark")
+  def initialize(text:, path:, classes: "", theme: :dark, link: false, method: nil)
     @text = text
     @path = path
-    @className = className
+    @classes = classes
+    @theme = theme
   end
 
-  def classes
-    ["btn"].tap do |css|
-      if @theme
-        
-      end
-    end
-
+  def css_classes
+    ["btn", THEMES[@theme], @classes].compact.join(" ")
   end
 
   def call
-    button_to @text, @path, method: :delete, class: classes
+    if @link
+      link_to @text, @path, method: @method, class: css_classes
+    else
+      button_to @text, @path, method: @method, class: css_classes
+    end
   end
 end
